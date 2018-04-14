@@ -1,9 +1,9 @@
 package fizzbuzz
 
 import (
-  "fmt"
-  "strconv"
-  "strings"
+	"fmt"
+	"strconv"
+	"strings"
 )
 
 // FizzBuzz takes one integer and iterates incrementally towards that number and adds into the string
@@ -16,37 +16,37 @@ import (
 //
 // (4) Otherwise it will just add the integer
 func FizzBuzz(numbers int) (output string) {
-  hasFizzOrBuzz := false
+	hasFizzOrBuzz := false
 
-  for i := 1; i <= numbers; i++ {
-      hasFizzOrBuzz = false
+	for i := 1; i <= numbers; i++ {
+		hasFizzOrBuzz = false
 
-      if isDivisbleBy(i, 3) || hasNum(i, 3) {
-        output += "Fizz"
-        hasFizzOrBuzz = true
-      }
+		if isDivisbleBy(i, 3) || hasNum(i, 3) {
+			output += "Fizz"
+			hasFizzOrBuzz = true
+		}
 
-      if isDivisbleBy(i, 5) || hasNum(i, 5) {
-        output += "Buzz"
-        hasFizzOrBuzz = true
-      }
+		if isDivisbleBy(i, 5) || hasNum(i, 5) {
+			output += "Buzz"
+			hasFizzOrBuzz = true
+		}
 
-      if !hasFizzOrBuzz {
-        output += strconv.Itoa(i)
-      }
+		if !hasFizzOrBuzz {
+			output += strconv.Itoa(i)
+		}
 
-      if i != numbers {
-        output += ", "
-      }
+		if i != numbers {
+			output += ", "
+		}
 
-    }
-  return
+	}
+	return
 }
 
 func isDivisbleBy(num int, comparisonNum int) bool {
-  return num%comparisonNum == 0
+	return num%comparisonNum == 0
 }
 
 func hasNum(num int, comparisonNum int) bool {
-  return strings.ContainsAny(strconv.Itoa(num), strconv.Itoa(comparisonNum))
+	return strings.ContainsAny(strconv.Itoa(num), strconv.Itoa(comparisonNum))
 }
